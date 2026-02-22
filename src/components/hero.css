@@ -1,0 +1,59 @@
+.hero {
+  height: 200vh;
+  background: black;
+  position: relative;
+}
+
+.sticky-container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.image {
+  position: absolute;
+  width: 300px;
+}
+
+.image img {
+  width: 100%;
+  display: block;
+}
+
+.piece1 {
+  left: 40%;
+  transform: rotate(-5deg);
+}
+
+.piece2 {
+  left: 55%;
+  transform: rotate(10deg);
+}
+
+h1 {
+  color: white;
+  position: absolute;
+  bottom: 100px;
+}
+
+.fragment {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.f1 {
+  clip-path: polygon(0 0, 100% 0, 50% 50%);
+}
+
+.f2 {
+  clip-path: polygon(0 100%, 100% 100%, 50% 50%);
+}
+
+.f3 {
+  clip-path: polygon(0 0, 0 100%, 50% 50%);
+}
