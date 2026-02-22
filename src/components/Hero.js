@@ -75,7 +75,7 @@ export default function Hero() {
                         transform: "translate(-50%, -50%)",
                         width: "950px",
                         height: "750px",
-                        position: "relative",
+                        
                     }}
                 >
                     {images.map((img, index) => {
