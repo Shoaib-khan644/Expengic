@@ -1,7 +1,7 @@
 import MobileShape from "./MobileShape";
 import { motion } from "framer-motion";
 
-export default function SceneTwo({ scene2 }) {
+export default function SceneTwo({ scene2, isMobile }) {
   return (
     <motion.div
       style={{
@@ -14,16 +14,19 @@ export default function SceneTwo({ scene2 }) {
         color: "white",
         opacity: scene2,
         scale: 0.85 + scene2 * 0.15,
+        padding: isMobile ? "20px" : "0px",
+        textAlign: "center",
       }}
     >
       {/* PHONE */}
-     <MobileShape scene2={scene2} />
+      <MobileShape scene2={scene2} isMobile={isMobile} />
 
       {/* TITLE */}
       <motion.h1
         style={{
-          fontSize: "72px",
-          textAlign: "center",
+          fontSize: isMobile ? "34px" : "72px",
+          lineHeight: 1.15,
+          marginTop: isMobile ? "20px" : "40px",
           transform: `translateY(${100 - scene2 * 100}px)`,
           opacity: scene2,
         }}
@@ -36,10 +39,9 @@ export default function SceneTwo({ scene2 }) {
       {/* SUBTEXT */}
       <motion.p
         style={{
-          marginTop: "20px",
-          fontSize: "20px",
-          maxWidth: "650px",
-          textAlign: "center",
+          marginTop: "18px",
+          fontSize: isMobile ? "16px" : "20px",
+          maxWidth: isMobile ? "90%" : "650px",
           transform: `translateY(${140 - scene2 * 140}px)`,
           opacity: scene2,
         }}
@@ -51,10 +53,11 @@ export default function SceneTwo({ scene2 }) {
       {/* CTA SECTION */}
       <motion.div
         style={{
-          marginTop: "40px",
+          marginTop: isMobile ? "30px" : "40px",
           display: "flex",
+          flexDirection: isMobile ? "column" : "row",
           alignItems: "center",
-          gap: "30px",
+          gap: isMobile ? "16px" : "30px",
           transform: `translateY(${200 - scene2 * 200}px)`,
           opacity: scene2,
         }}
@@ -65,9 +68,9 @@ export default function SceneTwo({ scene2 }) {
             background: "#00c37a",
             color: "white",
             border: "none",
-            padding: "14px 28px",
+            padding: isMobile ? "12px 20px" : "14px 28px",
             borderRadius: "30px",
-            fontSize: "16px",
+            fontSize: isMobile ? "14px" : "16px",
             cursor: "pointer",
             fontWeight: 500,
           }}
@@ -80,7 +83,7 @@ export default function SceneTwo({ scene2 }) {
           style={{
             color: "#00c37a",
             cursor: "pointer",
-            fontSize: "16px",
+            fontSize: isMobile ? "14px" : "18px",
           }}
         >
           See how it works ↓
